@@ -20,6 +20,12 @@
       <%= link_to "+", plant_path(plant), method: :delete,
                   class: 'card-remove-link',
                   data: { confirm: "Are you sure?" } %>
+      <div class="card-tags">
+        <% plant.tags.each do |tag| %>
+          <span><%= tag.name %></span>
+        <% end %>
+        <%= link_to '+', new_plant_plant_tag_path(plant) %>
+      </div>
     </div>
   <% end %>
 </div>
